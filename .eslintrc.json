@@ -1,10 +1,13 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "plugins": [
+    "babel",
     "jsx-a11y",
     "import"
   ],
   "rules": {
+    "react/jsx-props-no-spreading": "off",
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
     "jsx-a11y/no-static-element-interactions": "off",
@@ -16,7 +19,14 @@
       "error",
       "always"
     ],
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "babel/new-cap": 1,
+    "babel/camelcase": 1,
+    "babel/no-invalid-this": 1,
+    "babel/semi": 1,
+    "babel/no-unused-expressions": 1,
+    "babel/valid-typeof": 1
   },
   "env": {
     "browser": true,

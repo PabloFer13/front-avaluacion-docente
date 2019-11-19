@@ -2,14 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import selectors from './selectors';
+import Layout from '../../components/Layout';
+import AppView from '../../components/App';
+import Login from '../Login';
 
-const App = ({ loggedIn }) => {
-  if (!loggedIn) return <div><h3>Inicia Sesion porfa wex</h3></div>;
+const App = ({ loggedIn }) => (
+  <Layout>
+    {loggedIn ? <AppView /> : <Login />}
+  </Layout>
+);
 
-  return (
-    <div><h3>Chido weeex!</h3></div>
-  );
-};
+// if (!loggedIn) return (<Login />);
+
+// return (
+//   <div><h3>Chido weeex!</h3></div>
+// );
+
 
 App.propTypes = {
   loggedIn: PropTypes.bool,

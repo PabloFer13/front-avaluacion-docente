@@ -25,14 +25,9 @@ function createActions(prefix, actionTypes) {
     const action = createAction(type);
     action.type = type;
 
-    // eslint-disable-next-line
-    console.log(type);
-
     return { ...acc, [actionType]: action };
   }, {});
 
-  // eslint-disable-next-line
-  console.log(actions);
   return actions;
 }
 

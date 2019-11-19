@@ -4,10 +4,10 @@ import './styles/index.scss';
 import App from './containers/main';
 import * as serviceWorker from './serviceWorker';
 import { history, store } from './store';
-import ConnectApp from './hocs/provider';
+import connectApp from './hocs/provider';
 import theme from './services/theme';
 
-const ProvidedApp = ConnectApp(store, history, theme)(App);
+const ProvidedApp = connectApp(store, history, theme)(App);
 
 ReactDOM.render(<ProvidedApp />, document.getElementById('root'));
 
