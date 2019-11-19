@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Wrapper } from '../Layout/index.styled';
 
 
 class Login extends Component {
@@ -27,27 +28,31 @@ class Login extends Component {
   render() {
     const { matricula, password } = this.state;
     return (
-      <div className='col-md-4 align-self-center'>
-        <div className='card text-center'>
-          <div className='card-header'>
-            Iniciar Sesion
-          </div>
-          <div className='card-body text-left'>
-            <form>
-              <div className='form-group'>
-                <label>Matricula</label>
-                <input type='text' name='matricula' className='form-control' onChange={this.handleInput} value={matricula} />
+      <div className='container-fluid'>
+        <Wrapper className='d-flex flex-row justify-content-center align-items-center'>
+          <div className='col-md-4 align-self-center'>
+            <div className='card text-center'>
+              <div className='card-header'>
+                Iniciar Sesion
               </div>
-              <div className='form-group'>
-                <label>Password</label>
-                <input type='password' name='password' className='form-control' onChange={this.handleInput} value={password} />
+              <div className='card-body text-left'>
+                <form>
+                  <div className='form-group'>
+                    <label>Matricula</label>
+                    <input type='text' name='matricula' className='form-control' onChange={this.handleInput} value={matricula} />
+                  </div>
+                  <div className='form-group'>
+                    <label>Password</label>
+                    <input type='password' name='password' className='form-control' onChange={this.handleInput} value={password} />
+                  </div>
+                </form>
               </div>
-            </form>
+              <div className='card-footer text-muted'>
+                <button type='button' className='btn btn-primary' onClick={this.handleLogin}>Log In</button>
+              </div>
+            </div>
           </div>
-          <div className='card-footer text-muted'>
-            <button type='button' className='btn btn-primary' onClick={this.handleLogin}>Log In</button>
-          </div>
-        </div>
+        </Wrapper>
       </div>
     );
   }

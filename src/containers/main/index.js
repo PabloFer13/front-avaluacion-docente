@@ -2,21 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import selectors from './selectors';
-import Layout from '../../components/Layout';
+// import Layout from '../../components/Layout';
 import AppView from '../../components/App';
 import Login from '../Login';
 
-const App = ({ loggedIn }) => (
-  <Layout>
-    {loggedIn ? <AppView /> : <Login />}
-  </Layout>
-);
+const App = ({ loggedIn }) => {
+  if (!loggedIn) return (<Login />);
 
-// if (!loggedIn) return (<Login />);
-
-// return (
-//   <div><h3>Chido weeex!</h3></div>
-// );
+  return <AppView />;
+};
 
 
 App.propTypes = {
