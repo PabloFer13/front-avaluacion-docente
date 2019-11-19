@@ -1,14 +1,14 @@
 import React from 'react';
 import Routes from '../../containers/Routes';
+import Layout from '../Layout';
+// import { Wrapper } from '../Layout/index.styled';
 
 const App = () => (
-  <div>
-    {/* <nav className='navbar sticky-top navbar-light bg-light'>
-      <a className='navbar-brand' href='/'>Evaluacion Docente</a>
-      <button type='button' className='btn btn-primary'>Salir</button>
-    </nav> */}
+  <Layout>
+    {/* <Wrapper> */}
     <Routes />
-  </div>
+    {/* </Wrapper> */}
+  </Layout>
 );
 
 export default App;

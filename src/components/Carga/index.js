@@ -1,9 +1,10 @@
 import React from 'react';
+import { CardWrapper } from './index.styled';
 
 const Carga = () => (
-  <div className='d-flex flex-row justify-content-between align-content-between flex-wrap'>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+  <div className=' flex-grow-1 d-flex flex-row justify-content-between flex-wrap'>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -12,9 +13,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -23,9 +24,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -34,9 +35,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -45,9 +46,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -56,9 +57,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -67,9 +68,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -78,9 +79,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -89,9 +90,9 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
-    <div className='col-sm-12 col-md-3'>
-      <div className='card'>
+    </CardWrapper>
+    <CardWrapper className='col-sm-12 col-md-3 mb-3'>
+      <div className='card text-center'>
         <div className='card-header'>
           Diseno de Interfaces
         </div>
@@ -100,7 +101,7 @@ const Carga = () => (
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
-    </div>
+    </CardWrapper>
   </div>
 );
 
