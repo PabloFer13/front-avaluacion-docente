@@ -9,7 +9,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -20,7 +20,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -31,7 +31,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -42,7 +42,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -53,7 +53,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -64,7 +64,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -75,7 +75,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -86,7 +86,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
@@ -97,7 +97,7 @@ const Carga = () => (
           Diseno de Interfaces
         </div>
         <div className='card-body'>
-          <p className='card-text'>Julian Antonio Candiani Algo</p>
+          <p className='card-text'>Julian Antonio Candiani</p>
           <a href='/' className='btn btn-primary'>Go somewhere</a>
         </div>
       </div>
