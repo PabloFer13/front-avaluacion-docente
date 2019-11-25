@@ -7,6 +7,7 @@ import Carga from '../../components/Carga';
 // eslint-disable-next-line
 const Routes = ({ location }) => (
   <Switch location={location}>
+    <Route exact path='/carga/:idCarga/encuesta/:idEncuesta' component={Encuesta} />
     <Route exact path='/' component={Carga} />
     <Redirect to='/' />
   </Switch>
