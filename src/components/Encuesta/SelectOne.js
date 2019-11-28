@@ -29,3 +29,11 @@ SelectOne.propTypes = {
 };
 
 export default SelectOne;
+
+/*
+<SelectOne name='nombre1' value='1' selected text='op1' />
+      <SelectOne name='nombre2' value='2' selected text='op2' />
+      <SelectOne name='nombre3' value='3' selected text='op3' />
+      <SelectOne name='nombre4' value='4' selected text='op4' />
+      <SelectOne name='nombre5' value='5' selected text='op5' />
+ */

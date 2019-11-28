@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router';
 import Carga from '../../components/Carga';
+import Encuesta from '../Encuesta';
 
 // eslint-disable-next-line
 const Routes = ({ location }) => (
