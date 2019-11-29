@@ -7,7 +7,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      matricula: '',
+      email: '',
       password: '',
     };
   }
@@ -20,13 +20,13 @@ class Login extends Component {
   handleLogin = () => {
     const {
       props: { onLogin },
-      state: { matricula, password },
+      state: { email, password },
     } = this;
-    onLogin({ matricula, password });
+    onLogin({ email, password });
   };
 
   render() {
-    const { matricula, password } = this.state;
+    const { email, password } = this.state;
     return (
       <div className='container-fluid'>
         <Wrapper className='d-flex flex-row justify-content-center align-items-center'>
@@ -38,8 +38,8 @@ class Login extends Component {
               <div className='card-body text-left'>
                 <form>
                   <div className='form-group'>
-                    <label>Matricula</label>
-                    <input type='text' name='matricula' className='form-control' onChange={this.handleInput} value={matricula} />
+                    <label>Email</label>
+                    <input type='text' name='email' className='form-control' onChange={this.handleInput} value={email} />
                   </div>
                   <div className='form-group'>
                     <label>Password</label>

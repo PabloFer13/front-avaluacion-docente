@@ -33,36 +33,36 @@ MultiInput.propTypes = {
 
 export default MultiInput;
 
-{/* <MultiInput
-        name='nombre uno'
-        type='text'
-        value='nuloooo'
-        changeCb={(e) => {
-          // eslint-disable-next-line
-          console.log('Nombre: ', e.target.name);
-          // eslint-disable-next-line
-          console.log('Valor: ', e.target.value);
-        }}
-      />
-      <MultiInput
-        name='nombre dos'
-        type='text'
-        value='nuloooo'
-        changeCb={(e) => {
-          // eslint-disable-next-line
-          console.log('Nombre: ', e.target.name);
-          // eslint-disable-next-line
-          console.log('Valor: ', e.target.value);
-        }}
-      />
-      <MultiInput
-        name='nombre tres'
-        type='text'
-        value='nuloooo'
-        changeCb={(e) => {
-          // eslint-disable-next-line
-          console.log('Nombre: ', e.target.name);
-          // eslint-disable-next-line
-          console.log('Valor: ', e.target.value);
-        }}
-      /> */}
+/* <MultiInput
+       name='nombre uno'
+       type='text'
+       value='nuloooo'
+       changeCb={(e) => {
+         // eslint-disable-next-line
+         console.log('Nombre: ', e.target.name);
+         // eslint-disable-next-line
+         console.log('Valor: ', e.target.value);
+       }}
+     />
+     <MultiInput
+       name='nombre dos'
+       type='text'
+       value='nuloooo'
+       changeCb={(e) => {
+         // eslint-disable-next-line
+         console.log('Nombre: ', e.target.name);
+         // eslint-disable-next-line
+         console.log('Valor: ', e.target.value);
+       }}
+     />
+     <MultiInput
+       name='nombre tres'
+       type='text'
+       value='nuloooo'
+       changeCb={(e) => {
+         // eslint-disable-next-line
+         console.log('Nombre: ', e.target.name);
+         // eslint-disable-next-line
+         console.log('Valor: ', e.target.value);
+       }}
+     /> */

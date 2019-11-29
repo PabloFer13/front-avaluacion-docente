@@ -2,14 +2,19 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
 import actions from './actions';
 import appActions from '../main/actions';
+import studentActions from '../redux/student/actions';
+import api from '../../services/api';
 
 function* loginSaga({ payload }) {
-  const { matricula, password } = payload;
-  console.group('Saga Payload');
-  console.log('Matricula: ', matricula);
-  console.log('Password: ', password);
-  console.groupEnd();
-  yield put(appActions.setStatus(true));
+  const { email, password } = payload;
+  try {
+    const { data } = yield call(api.students.login, { email, password });
+    yield put(studentActions.setStudentInfo(data.alumno));
+    yield put(appActions.setStatus(true));
+  } catch{
+    // eslint-disable-next-line
+    alert('Credenciales incorrectas');
+  }
 }
 
 export default function* loginSagas() {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ProgressBar from './ProgressBar';
 import Pregunta from './Pregunta';
-import MultipleInput from './MultiInput';
+// import MultipleInput from './MultiInput';
 
 class Encuesta extends Component {
   constructor(props) {
@@ -11,13 +11,16 @@ class Encuesta extends Component {
   }
 
   renderQuestion() {
-    const { pregunta: {
- type, opciones, min, max 
-} } = this.props;
+    const {
+      pregunta: {
+        // eslint-disable-next-line
+        type, opciones, min, max,
+      },
+    } = this.props;
     if (type === 'multipleInput') {
-      const opciones = [];
-      for (let i = 0; i < min; i++) {
-        opciones.push();;
+      const opts = [];
+      for (let i = 0; i < min; i += 1) {
+        opts.push();
       }
     }
     if (type === 'multipleSelect') {
