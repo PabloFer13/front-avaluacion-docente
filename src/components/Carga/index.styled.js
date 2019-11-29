@@ -5,4 +5,8 @@ export const CardWrapper = styled.div`
   margin-right: auto;
 `;
 
+export const Card = styled.div`
+  min-height: 30vh !important;
+`;
+
 export default { CardWrapper };

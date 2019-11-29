@@ -8,6 +8,7 @@
   ],
   "rules": {
     "react/jsx-props-no-spreading": "off",
+    "react/forbid-prop-types": "off",
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
     "jsx-a11y/click-events-have-key-events": "off",
