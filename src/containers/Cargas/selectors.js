@@ -1,3 +1,5 @@
 const propsSelector = ({ cargas: { materias } }) => ({ materias });
 
-export default { propsSelector };
+const studentSelector = ({ student: { student } }) => student;
+
+export default { propsSelector, studentSelector };

@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const SelectOne = (props) => {
-  const {
-    text,
-    clickCb,
-    value,
-    selected,
-    name,
-  } = props;
+const InputWrapper = styled.div`
+  width: 33%;
+  margin-bottom: 20px;
+`;
 
-  return (
-    <div className='form-check' onClick={clickCb}>
-      <input className='form-check-input' type='radio' name={name} value={value} checked={selected} />
-      <label className='form-check-label'>
-        {text}
-      </label>
-    </div>
-  );
-};
+class SelectOne extends Component {
+  constructor(props) {
+    super(props);
+    this.handleOption = this.handleOption.bind(this);
+  }
+
+  handleOption(idOpt) {
+    const { cb } = this.props;
+    cb([idOpt]);
+  }
+
+  render() {
+    const {
+      options, answers,
+    } = this.props;
+    const opts = [...options];
+    const answer = answers.length > 0 ? answers[0] : '';
+    return (
+      opts.map((opt) => {
+        const { id, text } = opt;
+        return (
+          <InputWrapper key={id} onClick={() => this.handleOption(id)}>
+            <div className='form-check'>
+              <input className='form-check-input' type='radio' value={id} checked={answer === id} />
+              <label className='form-check-label'>
+                {text}
+              </label>
+            </div>
+          </InputWrapper>
+        );
+      })
+    );
+  }
+}
 
 SelectOne.propTypes = {
-  text: PropTypes.string.isRequired,
-  clickCb: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-  selected: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+  cb: PropTypes.func.isRequired,
+  answers: PropTypes.array.isRequired,
 };
 
 export default SelectOne;
-
-/*
-<SelectOne name='nombre1' value='1' selected text='op1' />
-      <SelectOne name='nombre2' value='2' selected text='op2' />
-      <SelectOne name='nombre3' value='3' selected text='op3' />
-      <SelectOne name='nombre4' value='4' selected text='op4' />
-      <SelectOne name='nombre5' value='5' selected text='op5' />
- */

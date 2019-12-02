@@ -2,46 +2,65 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ProgressBar from './ProgressBar';
 import Pregunta from './Pregunta';
-// import MultipleInput from './MultiInput';
+import Body from './Body';
 
 class Encuesta extends Component {
   constructor(props) {
     super(props);
-    this.renderQuestion = this.renderQuestion.bind(this);
+    this.state = { answers: [] };
+    this.handleAnsers = this.handleAnsers.bind(this);
+    this.handleNext = this.handleNext.bind(this);
+    this.validateAnswers = this.validateAnswers.bind(this);
   }
 
-  renderQuestion() {
-    const {
-      pregunta: {
-        // eslint-disable-next-line
-        type, opciones, min, max,
-      },
-    } = this.props;
-    if (type === 'multipleInput') {
-      const opts = [];
-      for (let i = 0; i < min; i += 1) {
-        opts.push();
-      }
+  handleNext() {
+    const { answers } = this.state;
+    const { submitAnswer } = this.props;
+    const flg = this.validateAnswers(answers, true);
+    if (flg) {
+      submitAnswer(answers);
+      this.setState({ answers: [] });
     }
-    if (type === 'multipleSelect') {
-      return <div>Multiple Select</div>;
+  }
+
+  handleAnsers(answers) {
+    const flg = this.validateAnswers(answers, false);
+    if (flg) {
+      this.setState({ answers: [...answers] });
     }
-    if (type === 'textInput') {
-      return <div>Text Input</div>;
+  }
+
+  validateAnswers(answers, full) {
+    const { question } = this.props;
+    const q = { ...question };
+    const { tipo, min, max } = q;
+    let flg = true;
+    if (tipo === 'multiple-select') {
+      flg = answers.length >= min && answers.length <= max;
+    } else if (tipo === 'multiple-input' && full) {
+      flg = answers.reduce((acc, el) => (el && el.length > 0), flg);
     }
-    return <div>Select One</div>;
+
+    return flg;
   }
 
   render() {
+    const { options, question } = this.props;
+    const q = { ...question };
+    const { tipo = 'none' } = q;
+    const { answers } = this.state;
+    const cb = this.handleAnsers;
     return (
       <div className='flex-grow-1 d-flex flex-column justify-content-start flex-wrap'>
         <ProgressBar />
         <Pregunta text='Que pregunta quieres que te haga?' />
         <div className='flex-grow-1 d-flex flex-column justify-content-center align-items-center'>
-          {this.renderQuestion()}
-          <div className='d-flex justify-content-between' style={{ width: '100%' }}>
-            <button type='button' className='btn btn-danger'>Anterior</button>
-            <button type='button' className='btn btn-primary'>Siguiente</button>
+          {Body[tipo]({
+            question, options, answers, cb,
+          })}
+          <div className='d-flex justify-content-center' style={{ width: '100%' }}>
+            {/* <button type='button' className='btn btn-danger'>Anterior</button> */}
+            <button type='button' className='btn btn-primary' onClick={this.handleNext}>Siguiente</button>
           </div>
         </div>
       </div>
@@ -50,7 +69,9 @@ class Encuesta extends Component {
 }
 
 Encuesta.propTypes = {
-  pregunta: PropTypes.node.isRequired,
+  question: PropTypes.object.isRequired,
+  options: PropTypes.array.isRequired,
+  submitAnswer: PropTypes.func.isRequired,
 };
 
 export default Encuesta;

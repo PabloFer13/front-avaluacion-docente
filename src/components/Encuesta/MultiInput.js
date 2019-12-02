@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -7,62 +7,55 @@ const InputWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
-const MultiInput = (props) => {
-  const {
-    name,
-    value,
-    changeCb,
-    type,
-  } = props;
+class MultiInput extends Component {
+  constructor(props) {
+    super(props);
+    this.handleInputs = this.handleInputs.bind(this);
+  }
 
-  return (
-    <InputWrapper>
-      <div className='input-group'>
-        <input type={type} value={value} name={name} onChange={changeCb} className='form-control' />
-      </div>
-    </InputWrapper>
-  );
-};
+  componentDidMount() {
+    const { question, cb } = this.props;
+    const q = { ...question };
+    const { min } = q;
+    const answers = [];
+    for (let i = 0; i < min; i += 1) {
+      answers.push('');
+    }
+
+    cb([...answers]);
+  }
+
+  handleInputs(e) {
+    const { answers, cb } = this.props;
+    const { target: { name, value } } = e;
+
+    const currentAnswers = [...answers];
+
+    const newAnswers = currentAnswers.map((it, ind) => (
+      ind === Number.parseInt(name, 10) ? value : it
+    ));
+
+    cb([...newAnswers]);
+  }
+
+  render() {
+    const { answers } = this.props;
+    const currentAnswers = [...answers];
+    return currentAnswers.map((it, ind) => (
+      <InputWrapper>
+        <div className='input-group'>
+          <input type='text' value={it} name={ind} onChange={this.handleInputs} className='form-control' />
+        </div>
+      </InputWrapper>
+    ));
+  }
+}
+
 
 MultiInput.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  changeCb: PropTypes.func.isRequired,
+  answers: PropTypes.array.isRequired,
+  cb: PropTypes.func.isRequired,
+  question: PropTypes.object.isRequired,
 };
 
 export default MultiInput;
-
-/* <MultiInput
-       name='nombre uno'
-       type='text'
-       value='nuloooo'
-       changeCb={(e) => {
-         // eslint-disable-next-line
-         console.log('Nombre: ', e.target.name);
-         // eslint-disable-next-line
-         console.log('Valor: ', e.target.value);
-       }}
-     />
-     <MultiInput
-       name='nombre dos'
-       type='text'
-       value='nuloooo'
-       changeCb={(e) => {
-         // eslint-disable-next-line
-         console.log('Nombre: ', e.target.name);
-         // eslint-disable-next-line
-         console.log('Valor: ', e.target.value);
-       }}
-     />
-     <MultiInput
-       name='nombre tres'
-       type='text'
-       value='nuloooo'
-       changeCb={(e) => {
-         // eslint-disable-next-line
-         console.log('Nombre: ', e.target.name);
-         // eslint-disable-next-line
-         console.log('Valor: ', e.target.value);
-       }}
-     /> */

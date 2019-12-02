@@ -3,10 +3,11 @@ import {
 } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
 import actions from './actions';
+import selectors from './selectors';
 import api from '../../services/api';
 
 function* getScheduleSaga() {
-  const { id } = yield select(({ student: { student } }) => student);
+  const { id } = yield select(selectors.studentSelector);
   try {
     const { data: { cargas } } = yield call(api.students.cargas, { id });
     yield put(actions.setStudentSubjects(cargas));

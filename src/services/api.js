@@ -10,4 +10,7 @@ export default {
     login: (credential) => post('/alumnos/session', { ...credential }),
     cargas: ({ id }) => get(`/alumnos/${id}/cargas`),
   },
+  periodo: {
+    current: () => get('/periodos/current'),
+  },
 };
