@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from '../Layout/index.styled';
+import { Wrapper } from '../../containers/Layout/index.styled';
 
 
 class Login extends Component {
