@@ -2,8 +2,8 @@ import createActions from '../../services/createActions';
 
 const prefix = '@encuesta-docente/login';
 
-const types = ['LOGIN'];
+const types = ['LOGIN', 'LOGOUT'];
 
-const { login } = createActions(prefix, types);
+const { login, logout } = createActions(prefix, types);
 
-export default { login };
+export default { login, logout };

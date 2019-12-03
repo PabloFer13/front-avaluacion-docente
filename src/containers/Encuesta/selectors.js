@@ -9,8 +9,8 @@ const propsSelector = ({ encuesta }) => {
 
   const question = { ...survey[currentQuestion] } || {};
   const options = question.Opciones ? [...question.Opciones] : [];
-  const total = survey.length;
-  const current = currentQuestion + 1;
+  const total = survey.length || 1;
+  const current = (currentQuestion || 0) + 1;
 
   return {
     question,

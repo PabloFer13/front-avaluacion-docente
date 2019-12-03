@@ -45,15 +45,17 @@ class Encuesta extends Component {
   }
 
   render() {
-    const { options, question } = this.props;
+    const {
+      options, question, total, current,
+    } = this.props;
     const q = { ...question };
     const { tipo = 'none' } = q;
     const { answers } = this.state;
     const cb = this.handleAnsers;
     return (
       <div className='flex-grow-1 d-flex flex-column justify-content-start flex-wrap'>
-        <ProgressBar />
-        <Pregunta text='Que pregunta quieres que te haga?' />
+        <ProgressBar total={total} current={current} />
+        <Pregunta text={q.text} />
         <div className='flex-grow-1 d-flex flex-column justify-content-center align-items-center'>
           {Body[tipo]({
             question, options, answers, cb,
@@ -72,6 +74,8 @@ Encuesta.propTypes = {
   question: PropTypes.object.isRequired,
   options: PropTypes.array.isRequired,
   submitAnswer: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
+  current: PropTypes.number.isRequired,
 };
 
 export default Encuesta;

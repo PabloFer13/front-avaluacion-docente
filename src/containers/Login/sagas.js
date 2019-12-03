@@ -17,6 +17,11 @@ function* loginSaga({ payload }) {
   }
 }
 
+function* logoutSagas() {
+  yield put(appActions.setStatus(false));
+}
+
 export default function* loginSagas() {
   yield takeLatest(actions.login.type, loginSaga);
+  yield takeLatest(actions.logout.type, logoutSagas);
 }

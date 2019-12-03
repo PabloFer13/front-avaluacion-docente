@@ -1,6 +1,6 @@
 import React from 'react';
 import Routes from '../../containers/Routes';
-import Layout from '../Layout';
+import Layout from '../../containers/Layout';
 // import { Wrapper } from '../Layout/index.styled';
 
 const App = () => (
